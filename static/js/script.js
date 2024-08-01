@@ -20,6 +20,9 @@ document.addEventListener("DOMContentLoaded", async function() {
         console.log("Fetching stock data");
         try {
             const response = await fetch('https://iw-stock-ticker-yf.onrender.com/market-data');
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
             const data = await response.json();
             console.log("Data fetched:", data);
             localStorage.setItem('stockCache', JSON.stringify({ data, timestamp: Date.now() }));
