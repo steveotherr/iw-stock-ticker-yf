@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", async function() {
         });
         stockTickerContent.innerHTML = tickerHTML;
         stockTickerContentDuplicate.innerHTML = tickerHTML;
+        stockTickerContentDuplicate.style.left = `${stockTickerContent.offsetWidth}px`; // Adjust initial position
     }
 
     async function fetchStockData() {
