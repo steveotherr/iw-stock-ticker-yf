@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", async function() {
             const elements = document.querySelectorAll(`#stock-${symbol.replace(/[:]/g, '-')}`);
             elements.forEach(element => {
                 if (element) {
-                    const price = stockData ? stockData : 'N/A';
+                    const price = stockData !== null ? stockData : 'N/A';
                     element.innerHTML = `${symbol}: $${isNaN(price) ? 'N/A' : parseFloat(price).toFixed(2)}`;
                 }
             });
